@@ -10,7 +10,6 @@ et-xmlfile==1.1.0
 git-me-the-url==2.0.3
 gitdb==4.0.10
 GitPython==3.1.29
-gpg==1.17.1
 idna==3.4
 imagesize==1.4.1
 Jinja2==3.1.2
