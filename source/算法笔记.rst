@@ -2,6 +2,37 @@
 算法笔记
 =======================================
 
+1.1 选择排序
+=======================================
+.. code-block:: python
+  :linenos:
+  
+  def SelectionSort(list):
+  for last_idx in range(len(list)-1, 0, -1):
+    max_idx = last_idx
+    for idx in range(last_idx):
+      if (list[idx] > list[max_idx]):
+        max_idx = idx
+    # exchange max value to the last
+    list[last_idx], list[max_idx] = list[max_idx], list[last_idx]
+    # print('last_idx:', last_idx, 'max_idx:', max_idx, 'list:', list)
 
 
 
+1.2 希尔排序
+=======================================
+.. code-block:: c
+  :linenos:
+
+  void shell_sort(int *v, int n) {
+    int gap, i, j, temp;
+    for (gap = n/2; gap > 0; gap /= 2) { // two elements distance
+      for (i = gap; i < n; i++) { // first compare number
+        temp = v[i];
+        for (j = i; j >= gap && temp < v[j - gap]; j -= gap) { // compare with secode number
+          v[j] = v[j - gap];
+        }
+        v[j] = temp;
+      }
+    }
+  }

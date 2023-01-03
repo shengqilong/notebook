@@ -8,9 +8,10 @@ Welcome to notebook's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Part0:
+   :caption: Contents:
 
    Linux学习笔记
+   算法笔记
 
 
 Indices and tables
