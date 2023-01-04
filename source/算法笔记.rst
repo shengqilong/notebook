@@ -17,8 +17,6 @@
     list[last_idx], list[max_idx] = list[max_idx], list[last_idx]
     # print('last_idx:', last_idx, 'max_idx:', max_idx, 'list:', list)
 
-
-
 1.2 希尔排序
 =======================================
 .. code-block:: c
@@ -36,3 +34,18 @@
       }
     }
   }
+
+1.3 深度搜索
+=======================================
+.. code-block:: python
+  :linenos:
+
+  def dfs(cur_node, node_graph, node_list_dict={}, node_list=[]):
+    node_list.append(cur_node)
+    if cur_node not in node_graph:
+      node_list_dict[cur_node] = copy.deepcopy(node_list)
+    else:
+      for nxt_node in node_graph[cur_node]:
+        dfs(nxt_node, node_graph, node_list_dict, node_list)
+    # pop out cur_node when find the leaf node or all the subnodes are traversed
+    node_list.pop()
