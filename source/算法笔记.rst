@@ -49,3 +49,24 @@
         dfs(nxt_node, node_graph, node_list_dict, node_list)
     # pop out cur_node when find the leaf node or all the subnodes are traversed
     node_list.pop()
+
+1.4 快速排序
+=======================================
+.. code-block:: crystal
+  :linenos:
+
+  def quick_sort(test_list)
+    if test_list.size < 2
+      return test_list
+    else
+      pivot = test_list.shift
+      less_list = Array(Int32).new
+      greater_list = Array(Int32).new
+      test_list.each do |num|
+        less_list << num if num <= pivot
+        greater_list << num if num > pivot
+      end
+      # puts "less_list:#{less_list}, pivot:#{pivot}, greater_list:#{greater_list}"
+      return quick_sort(less_list) + [pivot] + quick_sort(greater_list)
+    end
+  end
