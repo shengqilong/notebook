@@ -60,13 +60,10 @@
       return test_list
     else
       pivot = test_list.shift
-      less_list = Array(Int32).new
-      greater_list = Array(Int32).new
-      test_list.each do |num|
-        less_list << num if num <= pivot
-        greater_list << num if num > pivot
-      end
+      less_list = test_list.select do |num| num <= pivot end
+      greater_list = test_list.select do |num| num > pivot end
       # puts "less_list:#{less_list}, pivot:#{pivot}, greater_list:#{greater_list}"
+      # p! less_list, pivot, greater_list # comma will print Enter('\n')
       return quick_sort(less_list) + [pivot] + quick_sort(greater_list)
     end
   end
